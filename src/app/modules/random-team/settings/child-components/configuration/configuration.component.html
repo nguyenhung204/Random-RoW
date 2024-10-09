@@ -1,0 +1,76 @@
+<div class="row pb-4">
+    <div class="col-lg-6">
+        <b class="page-title">Thiết lập danh sách</b>
+        <div class="row">
+            <div class="col-lg-6 mt-2">
+                <label>Số lượng nhóm</label>
+                <input [(ngModel)]="formData.totalTeams" type="number" class="form-control">
+            </div>
+            <div class="col-lg-12 mt-2">
+                <button class="btn btn-primary me-3" (click)="createTeams()">Khởi tạo nhóm</button>
+                <button class="btn btn-primary me-3" (click)="resetTeams()">Reset</button>
+                <button class="btn btn-danger" (click)="clearAllData()">Test</button>
+            </div>
+            <div class="col-lg-12 mt-4">
+                <label>Link Google Sheets</label>
+                <input [(ngModel)]="formData.sheets" type="text" class="form-control"
+                    placeholder="https://docs.google.com/...">
+            </div>
+            <div class="col-lg-6 mt-2">
+                <label>Tên sheet</label>
+                <input [(ngModel)]="formData.sheetName" type="text" class="form-control" placeholder="Tên sheet">
+            </div>
+
+            <div class="col-lg-12 mt-4">
+                <b class="form-section-title">Excel Column Mapping</b>
+            </div>
+            <div class="col-lg-6 mt-2">
+                <label>Họ & Tên</label>
+                <input [(ngModel)]="formData.name" type="text" class="form-control" placeholder="Tên cột trong excel">
+            </div>
+            <div class="col-lg-6 mt-2">
+                <label>Số điện thoại</label>
+                <input [(ngModel)]="formData.phoneNumber" type="text" class="form-control"
+                    placeholder="Tên cột trong excel">
+            </div>
+            <div class="col-lg-6 mt-2">
+                <label>MSSV</label>
+                <input [(ngModel)]="formData.mssv" type="text" class="form-control" placeholder="Tên cột trong excel">
+            </div>
+            <div class="col-lg-6 mt-2">
+                <label>Lớp</label>
+                <input [(ngModel)]="formData.className" type="text" class="form-control"
+                    placeholder="Tên cột trong excel">
+            </div>
+            <div class="col-lg-6 mt-2">
+                <label>Email</label>
+                <input [(ngModel)]="formData.email" type="text" class="form-control" placeholder="Tên cột trong excel">
+            </div>
+            <div class="col-lg-6 mt-2">
+                <label>Ngày sinh</label>
+                <input [(ngModel)]="formData.birthday" type="text" class="form-control"
+                    placeholder="Tên cột trong excel">
+            </div>
+            <div class="col-12 mt-2">
+                <label>Thông tin khác</label>
+                <textarea [(ngModel)]="formData.moreInfo" class="form-control" rows="4"
+                    placeholder="[{field: 'fieldName', column: 'Tên cột trong excel'}]"></textarea>
+            </div>
+            <div class="col-lg-12 mt-4">
+                <button class="btn btn-primary me-3" (click)="previewList()">Xem danh sách</button>
+                <button class="btn btn-success me-3" (click)="saveAllList()">Lưu dữ liệu</button>
+            </div>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="row list-container">
+    <div class="float-container mt-1">
+    </div>
+    <div class="float-container">
+        <div class="column-data me-3" *ngFor="let item of columnsMapping">
+            <div class="text-center" ><b>{{item.column}}</b></div>
+            <div class="cell m-4" *ngFor="let user of userList">{{user[item.key] ? user[item.key] : "-"}}</div>
+        </div>
+    </div>
+</div>

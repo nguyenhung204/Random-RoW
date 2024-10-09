@@ -1,0 +1,29 @@
+:root {
+    --loading-panel-bg-color: #ffffffab;
+    --main-branding-color: #EF4130;
+}
+
+.random-container {
+    padding-top: 4rem;
+
+    .page-title {
+        font-size: 1.5rem;
+    }
+
+    .list-container {
+        overflow-x: scroll;
+    }
+}
+
+.float-container {
+    width: auto;
+    max-width: unset;
+
+    .column-data {
+        float: left;
+    }
+}
+
+img.logo {
+    filter: drop-shadow(2px 1px 2px rgba(255, 255, 255, 0.575))
+}

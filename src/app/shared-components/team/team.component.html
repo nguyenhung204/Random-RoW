@@ -1,0 +1,9 @@
+<div class="team-wrapper">
+    <div class="team-name">{{team.name}}</div>
+    <div class="users">
+        <div class="user" [ngClass]="{'showing': i > displayedNumber - 1}" *ngFor="let user of _users; let i = index">
+            <div class="index">{{i+1}}.</div>
+            <div>{{user.shortName}}</div>
+        </div>
+    </div>
+</div>

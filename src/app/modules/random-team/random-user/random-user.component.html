@@ -1,0 +1,23 @@
+<main class="flex-shrink-0 random-user-container">
+    <div class="form" *ngIf="!user.mssv">
+        <img class="mb-4" src="../../../../assets/LogoPNG.png" alt="banner">
+        <div class="label">Nhập mã số sinh viên của bạn vào đây nhé!</div>
+        <div class="container-input position-relative">
+            <img class="position-absolute" src="../../../../assets/khunginput.png" alt="">
+            <input type="text" class="form-control text-box z-0" placeholder="MSSV" [(ngModel)]="mssv">
+        </div>
+        <button [disabled]="!mssv" type="button" class="btn btn-outline-primary center" (click)="checkInfo()">Kiểm tra
+            thông tin</button>
+        <div class="error mt-4">{{errorMessage}}</div>
+    </div>
+    <div class="form user-info" *ngIf="user.mssv">
+        <img src="../../../../assets/LogoPNG.png" alt="banner">
+        <div class="name">{{user.name}}</div>
+        <div class="mssv">{{user.mssv}}</div>
+        <h1 class="team" *ngIf="user.isVisible">
+            <b>{{getTeam(user.team)}}</b>
+        </h1>
+        <button *ngIf="!user.isVisible" [disabled]="!mssv" type="button" class="btn btn-outline-primary mt-5"
+            (click)="randomTeam()">Random Team</button>
+    </div>
+</main>

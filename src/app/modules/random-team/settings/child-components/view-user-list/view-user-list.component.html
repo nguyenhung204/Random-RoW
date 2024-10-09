@@ -1,0 +1,28 @@
+
+<div class="row list-container container-fluid">
+    <div class="float-container container-fluid">
+        <div class="column-data text-center" *ngFor="let item of columnsMapping">
+            <div class="text-center" ><b>{{item.column}}</b></div>
+            <div class="cell m-2" *ngFor="let user of userList">{{user[item.key] ? user[item.key] : "-"}}</div>
+           
+        </div>
+        <div class="column-data text-center">
+            <div class="mb-2"><b>Chức năng</b></div>
+             <div class="cell m-2" *ngFor="let user of userList">
+                <div *ngIf="user.isVisible; else elseBlock">
+                    <div class="text-danger px-4" (click)="HideInfo(user.mssv)">Hide</div>
+                     <!-- Nội dung sẽ được hiển thị khi điều kiện là true -->
+                  </div>
+                  <ng-template #elseBlock>
+                    <div class="text-primary px-4" (click)="ShowInfo(user.mssv)">Show</div>
+                    <!-- Nội dung sẽ được hiển thị khi điều kiện là false -->
+                  </ng-template>      
+            </div>
+        </div>
+        <div class="cell position-sticky" >
+            <button class="btn btn-danger rounded-4 px-4 m-2 btn-sm" (click)="HideInfoAll(userList)">Hide</button>
+        
+            <button class="btn btn-primary rounded-4 px-4 m-2 btn-sm" (click)="ShowInfoAll(userList)">Show</button>
+         </div> 
+    </div>
+</div>

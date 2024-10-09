@@ -1,0 +1,8 @@
+<main class="flex-shrink-0 main-dashboard-container">
+    <img src="../../../../assets/LogoPNG.png" alt="banner" class="logo">
+    <div class="teams-table">
+        <div *ngFor="let team of teams">
+            <app-team [team]="team" [users]="userList"></app-team>
+        </div>
+    </div>
+</main>

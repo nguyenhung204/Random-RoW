@@ -1,0 +1,70 @@
+.team-wrapper {
+    margin: 0.2rem;
+    min-width: 130px;
+    
+    .team-name {
+        font-weight: bold;
+        font-size: 1.2rem;
+        color: #ffcd04;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .users .user {
+        font-size: 13pt;
+        font-weight: 500;
+        transition: transform 1s linear;
+        color: white;
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: 0.2rem;
+    }
+
+    .users .showing {
+        transform: translate(0, 1000px);
+    }
+
+    div.index {
+        min-width: 20px;
+        color: #3cadbf;
+    }
+
+
+}
+
+@media only screen and (max-width: 1280px) {
+    .team-wrapper {
+        margin: 0.5rem;
+        min-width: 100px;
+
+        .team-name {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ffcd04;
+            text-transform: uppercase;
+        }
+
+        .users .user {
+            font-size: 10pt;
+            font-weight: 500;
+            transition: transform 1s linear;
+            color: white;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin-bottom: 0.1rem;
+        }
+
+        .users .showing {
+            transform: translate(0, 1000px);
+        }
+
+        div.index {
+            min-width: 20px;
+            color: #3cadbf;
+        }
+
+
+    }
+}
