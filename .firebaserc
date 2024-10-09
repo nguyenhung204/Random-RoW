@@ -1,6 +1,5 @@
 {
   "projects": {
-    "default": "hcyu-fit",
     "random": "hcyu-fit"
   },
   "targets": {},
